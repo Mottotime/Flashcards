@@ -70,9 +70,7 @@ if(not check_file_exists('flashcard_scores.txt','r')):
 #load scores from the file, expanding the scoring array if needed
 with open("flashcard_scores.txt","r") as ifile:
 	scores=eval(ifile.read())
-if(len(scores)==0):
-	scores=[0]*len(cards)
-elif(len(scores)<len(cards)):
+if(len(scores)<len(cards)):
 	diff=len(cards)-len(scores)
 	scores=scores+[0]*diff
 	print ",",diff,"were added since the last review",
